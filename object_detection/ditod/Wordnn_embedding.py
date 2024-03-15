@@ -42,14 +42,8 @@ class WordnnEmbedding(nn.Module):
     def init_weights(self, bros_embedding_path):
         if self.use_pretrain_weight:
             state_dict = torch.load(bros_embedding_path + "pytorch_model.bin", map_location='cpu')
-            if 'bert' in bros_embedding_path:
-                word_embs = state_dict["bert.embeddings.word_embeddings.weight"]
-            elif 'bros' in bros_embedding_path:
-                word_embs = state_dict["embeddings.word_embeddings.weight"]
-            elif 'layoutlm' in bros_embedding_path:
-                word_embs = state_dict["layoutlm.embeddings.word_embeddings.weight"]
-            else:
-                 word_embs = state_dict["roberta.embeddings.word_embeddings.weight"]
+
+            word_embs = state_dict["roberta.embeddings.word_embeddings.weight"]
             self.embedding = nn.Embedding.from_pretrained(word_embs)
             print("use_pretrain_weight: load model from:", bros_embedding_path)
         
