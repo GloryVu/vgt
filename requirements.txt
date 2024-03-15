@@ -1,0 +1,14 @@
+torch
+torchvision
+timm==0.5.4
+Pillow==8.4.0
+blobfile
+mypy
+numpy
+pytest
+requests
+einops
+tensorboard
+scipy
+opencv-python==4.5.1.48
+Shapely==1.8.4
