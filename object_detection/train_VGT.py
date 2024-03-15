@@ -55,21 +55,6 @@ def main(args):
     """
     register publaynet first
     """
-    # add docbank data
-    register_coco_instances(
-        "docbank_train",
-        {},
-        "/DocBank_root_path/DocBank/500K_train_VGT.json",
-        "/DocBank_root_path/DocBank/DocBank_500K_ori_img"
-    )
-
-    register_coco_instances(
-        "docbank_val",
-        {},
-        "/DocBank_root_path/DocBank/500K_valid_VGT.json",
-        "/DocBank_root_path/DocBank/DocBank_500K_ori_img"
-    )
-    
     
     # add publaynet data
     register_coco_instances(
@@ -85,38 +70,7 @@ def main(args):
         "./publaynet_root_path/publaynet/val.json",
         "./publaynet_root_path/publaynet/val"
     )
-    
 
-    # add D4LA data
-    register_coco_instances(
-        "D4LA_train",
-        {},
-        "/D4LA_root_path/D4LA/json/train.json",
-        "/D4LA_root_path/D4LA/train_images"
-    )
-
-    register_coco_instances(
-        "D4LA_val",
-        {},
-        "/D4LA_root_path/D4LA/json/test.json",
-        "/D4LA_root_path/D4LA/test_images"
-    )
-
-    
-    # add doclaynet data
-    register_coco_instances(
-        "doclayent_train",
-        {},
-        "/doclayent_root_path/DocLayNet/COCO/train.json",
-        "/doclayent_root_path/DocLayNet/PNG"
-    )
-
-    register_coco_instances(
-        "doclayent_val",
-        {},
-        "/doclayent_root_path/DocLayNet/COCO/val.json",
-        "/doclayent_root_path/DocLayNet/PNG"
-    )
     
 
     cfg = setup(args)
