@@ -75,15 +75,15 @@ def main(args):
     register_coco_instances(
         "publaynet_train",
         {},
-        "/publaynet_root_path/publaynet/train.json",
-        "/publaynet_root_path/publaynet/train"
+        "./publaynet_root_path/publaynet/train.json",
+        "./publaynet_root_path/publaynet/train"
     )
 
     register_coco_instances(
         "publaynet_val",
         {},
-        "/publaynet_root_path/publaynet/val.json",
-        "/publaynet_root_path/publaynet/val"
+        "./publaynet_root_path/publaynet/val.json",
+        "./publaynet_root_path/publaynet/val"
     )
     
 
