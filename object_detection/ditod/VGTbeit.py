@@ -785,7 +785,7 @@ class BEiT(nn.Module):
         
         for i, blk in enumerate(self.blocks):
             if self.use_checkpoint:
-                vis_x = checkpoint.checkpoint(blk, vis_x, rel_pos_bias, training_window_size)
+                vis_x = checkpoint.checkpoint(blk, vis_x, rel_pos_bias, training_window_size, use_reentrant=True)
             else:
                 vis_x = blk(vis_x, rel_pos_bias=rel_pos_bias, training_window_size=training_window_size)
             if i in self.out_indices:
@@ -794,7 +794,7 @@ class BEiT(nn.Module):
         
         for i, grid_blk in enumerate(self.grid_blocks):
             if self.use_checkpoint:
-                grid_x = checkpoint.checkpoint(grid_blk, grid_x, rel_pos_bias, grid_training_window_size)
+                grid_x = checkpoint.checkpoint(grid_blk, grid_x, rel_pos_bias, grid_training_window_size, use_reentrant=True)
             else:
                 grid_x = grid_blk(grid_x, rel_pos_bias=rel_pos_bias, training_window_size=grid_training_window_size)
             if i in self.out_indices:
@@ -804,7 +804,7 @@ class BEiT(nn.Module):
         # import ipdb;ipdb.set_trace()
         for i, cross_blk in enumerate(self.cross_blocks):
             if self.use_checkpoint:
-                vis_x, grid_x = checkpoint.checkpoint(cross_blk, vis_x, grid_x)
+                vis_x, grid_x = checkpoint.checkpoint(cross_blk, vis_x, grid_x, use_reentrant=True)
             else:
                 vis_x, grid_x = cross_blk(vis_input = vis_x, grid_input = grid_x)
                 
