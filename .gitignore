@@ -2,3 +2,6 @@ data
 images
 figures
 apex
+**/__pycache__
+**/*.pth
+**/test.*
