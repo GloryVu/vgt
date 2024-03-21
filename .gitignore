@@ -5,3 +5,5 @@ apex
 **/__pycache__
 **/*.pth
 **/test.*
+**/*.bin
+output
