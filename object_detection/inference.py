@@ -94,7 +94,6 @@ def main():
     for image_path, grid_path in zip(img_paths,grid_paths):
         # Step 5: run inference
         img = cv2.imread(image_path)
-        
         md = MetadataCatalog.get(cfg.DATASETS.TEST[0])
         if args.dataset == 'publaynet':
             md.set(thing_classes=["text","title","list","table","figure"])
