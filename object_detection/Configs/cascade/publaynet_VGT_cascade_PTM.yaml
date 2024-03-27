@@ -23,13 +23,13 @@ MODEL:
   RPN:
     POST_NMS_TOPK_TRAIN: 2000
 SOLVER:
-  BASE_LR: 0.000004
+  BASE_LR: 0.000002
   WARMUP_ITERS: 0
   STEPS: (15000, 20000)
   MAX_ITER: 25000
   IMS_PER_BATCH: 2
 TEST:
-  EVAL_PERIOD: 5000
+  EVAL_PERIOD: 12500
 DATASETS:
-  TRAIN: ("publaynet_train",)
-  TEST: ("publaynet_val",)
+  TRAIN: ("docbank_train",)
+  TEST: ("docbank_val",)
