@@ -17,7 +17,7 @@ class WordnnEmbedding(nn.Module):
     """Generate chargrid embedding feature map.
     """
     def __init__(self,
-                 vocab_size=250005,
+                 vocab_size=30552,
                  hidden_size=768,
                  embedding_dim=64,
                  bros_embedding_path="/xlm-roberta-base/",

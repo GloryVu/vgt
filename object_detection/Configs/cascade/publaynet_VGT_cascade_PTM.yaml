@@ -3,7 +3,7 @@ MODEL:
   MASK_ON: False
   META_ARCHITECTURE: "VGT"
   WORDGRID:
-    VOCAB_SIZE: 30552
+    VOCAB_SIZE: 250005
     EMBEDDING_DIM: 64
     MODEL_PATH: "./path/xlm-roberta-uncased/"
     USE_PRETRAIN_WEIGHT: True
