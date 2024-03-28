@@ -37,8 +37,8 @@ MODEL:
     NUM_CONV: 4
     POOLER_RESOLUTION: 14
 DATASETS:
-  TRAIN: ("publaynet_train",)
-  TEST: ("publaynet_val",)
+  TRAIN: ("docbank_train",)
+  TEST: ("docbank_val",)
 SOLVER:
   LR_SCHEDULER_NAME: "WarmupCosineLR"
   AMP:
