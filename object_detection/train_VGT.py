@@ -59,14 +59,14 @@ def main(args):
     # add publaynet data
     register_coco_instances(
         "publaynet_train",
-        {},
+        DetrDatasetMapper,
         "./publaynet/train1.json",
         "./publaynet/train"
     )
 
     register_coco_instances(
         "publaynet_val",
-        {},
+        DetrDatasetMapper,
         "./publaynet/val1.json",
         "./publaynet/val"
     )
