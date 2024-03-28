@@ -72,7 +72,7 @@ def main(args):
     )
 
     
-
+    args.resume =True
     cfg = setup(args)
     if args.eval_only:
         model = MyTrainer.build_model(cfg)
