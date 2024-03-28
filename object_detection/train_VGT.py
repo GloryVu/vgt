@@ -45,7 +45,7 @@ def setup(args):
     # add_coat_config(cfg)
     add_vit_config(cfg)
     cfg.merge_from_file('./Configs/cascade/publaynet_VGT_cascade_PTM.yaml')
-    # cfg.merge_from_list(args.opts)
+    cfg.merge_from_list(args.opts)
     cfg.freeze()
     default_setup(cfg, args)
     return cfg
@@ -59,14 +59,14 @@ def main(args):
     # add publaynet data
     register_coco_instances(
         "publaynet_train",
-        DetrDatasetMapper,
+        {},
         "./publaynet/train1.json",
         "./publaynet/train"
     )
 
     register_coco_instances(
         "publaynet_val",
-        DetrDatasetMapper,
+        {},
         "./publaynet/val1.json",
         "./publaynet/val"
     )
