@@ -17,7 +17,7 @@ class WordnnEmbedding(nn.Module):
     """Generate chargrid embedding feature map.
     """
     def __init__(self,
-                 vocab_size=30552,
+                 vocab_size=250005,
                  hidden_size=768,
                  embedding_dim=64,
                  bros_embedding_path="/xlm-roberta-base/",
@@ -61,7 +61,6 @@ class WordnnEmbedding(nn.Module):
         chargrid_map = torch.zeros((batch_b, batch_h // stride, batch_w // stride ), dtype=torch.int64).to(device)
         
         for iter_b in range(batch_b):
-            print(batched_inputs[iter_b].keys())
             per_input_ids = batched_inputs[iter_b]["input_ids"]   
             per_input_bbox = batched_inputs[iter_b]["bbox"]
             
