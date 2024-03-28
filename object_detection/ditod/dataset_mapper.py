@@ -207,7 +207,6 @@ class DetrDatasetMapper:
                 
         dataset_dict["input_ids"] = input_ids 
         dataset_dict["bbox"] = bbox
-        self.logger.info(dataset_dict)
         if not self.is_train:
             # USER: Modify this if you want to keep them for some reason.
             dataset_dict.pop("annotations", None)
