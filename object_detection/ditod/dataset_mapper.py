@@ -132,6 +132,7 @@ class DetrDatasetMapper:
         # try:s
         name = dataset_dict["file_name"][0:-4].split('/') 
         if 'publaynet' in name:
+            print('---------------------publaynet-----------------')
             root = '/'.join(name[:-2])
             if name[-2] == 'val':
                 name[-2] = 'dev'
