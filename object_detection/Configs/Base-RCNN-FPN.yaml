@@ -37,8 +37,8 @@ MODEL:
     NUM_CONV: 4
     POOLER_RESOLUTION: 14
 DATASETS:
-  TRAIN: ("docbank_train",)
-  TEST: ("docbank_val",)
+  TRAIN: ("publaynet_train",)
+  TEST: ("publaynet_val",)
 SOLVER:
   LR_SCHEDULER_NAME: "WarmupCosineLR"
   AMP:
@@ -56,15 +56,15 @@ SOLVER:
   IMS_PER_BATCH: 2
 INPUT:
   CROP:
-    ENABLED: True
+    ENABLED: False
     TYPE: "absolute_range"
     SIZE: (384, 600)
   MIN_SIZE_TRAIN: (480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800)
   FORMAT: "RGB"
 DATALOADER:
   NUM_WORKERS: 6
-  FILTER_EMPTY_ANNOTATIONS: False
+  FILTER_EMPTY_ANNOTATIONS: True
 VERSION: 2
 AUG:
-  DETR: True
+  DETR: False
 SEED: 42

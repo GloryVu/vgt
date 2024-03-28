@@ -31,5 +31,5 @@ SOLVER:
 TEST:
   EVAL_PERIOD: 12500
 DATASETS:
-  TRAIN: ("docbank_train",)
-  TEST: ("docbank_val",)
+  TRAIN: ("publaynet_train",)
+  TEST: ("publaynet_val",)
