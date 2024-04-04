@@ -14,7 +14,7 @@ MODEL:
     IN_FEATURES: ["layer3", "layer5", "layer7", "layer11"]
   ANCHOR_GENERATOR:
     SIZES: [[32], [64], [128], [256], [512]]  # One size for each in feature map
-    ASPECT_RATIOS: [[2.0, 3.0, 4.0]]  # Three aspect ratios (same for all in feature maps)
+    ASPECT_RATIOS: [[0.5, 1.0, 2.0]]  # Three aspect ratios (same for all in feature maps)
   RPN:
     IN_FEATURES: ["p2", "p3", "p4", "p5", "p6"]
     PRE_NMS_TOPK_TRAIN: 2000  # Per FPN level
@@ -59,6 +59,7 @@ INPUT:
     ENABLED: False
     TYPE: "absolute_range"
     SIZE: (384, 600)
+    RANDOM_FLIP: False
   MIN_SIZE_TRAIN: (480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800)
   FORMAT: "RGB"
 DATALOADER:
