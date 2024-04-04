@@ -81,7 +81,7 @@ def main(args):
         )
         res = MyTrainer.test(cfg, model)
         return res
-    
+    print(cfg)
     trainer = MyTrainer(cfg)
     trainer.resume_or_load(resume=args.resume)
     return trainer.train()
