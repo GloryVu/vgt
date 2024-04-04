@@ -67,5 +67,5 @@ DATALOADER:
 VERSION: 2
 AUG:
   DETR: True
-  RANDOM_FLIP: False
+  FLIP: False
 SEED: 42
