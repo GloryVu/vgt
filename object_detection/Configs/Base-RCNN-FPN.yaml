@@ -59,7 +59,7 @@ INPUT:
     ENABLED: False
     TYPE: "absolute_range"
     SIZE: (384, 600)
-    RANDOM_FLIP: False
+  RANDOM_FLIP: False
   MIN_SIZE_TRAIN: (480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800)
   FORMAT: "RGB"
 DATALOADER:
@@ -68,4 +68,5 @@ DATALOADER:
 VERSION: 2
 AUG:
   DETR: True
+  FLIP: False
 SEED: 42
