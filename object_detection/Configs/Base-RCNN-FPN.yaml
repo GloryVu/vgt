@@ -68,5 +68,4 @@ DATALOADER:
 VERSION: 2
 AUG:
   DETR: True
-  FLIP: False
 SEED: 42
