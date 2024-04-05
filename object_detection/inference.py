@@ -111,6 +111,7 @@ def main():
                         md,
                         scale=1.0,
                         instance_mode=ColorMode.SEGMENTATION)
+        print('output',output.to("cpu"))
         result = v.draw_instance_predictions(output.to("cpu"))
         result_image = result.get_image()[:, :, ::-1]
 

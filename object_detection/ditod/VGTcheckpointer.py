@@ -14,7 +14,7 @@ import torch.nn.functional as F
 def append_prefix(k):
     prefix = 'backbone.'
     if "Wordgrid_embedding" in k:
-        return k[10:]
+        return k
     elif "myFPN" in k:
         return prefix + k[16:]
     else:
