@@ -12,13 +12,7 @@ import torch.nn.functional as F
 
 
 def append_prefix(k):
-    prefix = 'backbone.'
-    if "Wordgrid_embedding" in k:
-        return k
-    elif "myFPN" in k:
-        return prefix + k[16:]
-    else:
-        return prefix + k if not k.startswith(prefix) else k
+    return k
     
 def DiT_append_prefix(k):
     prefix = 'backbone.bottom_up.backbone.'
