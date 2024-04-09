@@ -29,7 +29,7 @@ SOLVER:
   MAX_ITER: 20000
   IMS_PER_BATCH: 2
 TEST:
-  EVAL_PERIOD: 10000
+  EVAL_PERIOD: 9500
 DATASETS:
   TRAIN: ("publaynet_train",)
   TEST: ("publaynet_val",)
