@@ -37,7 +37,7 @@ MODEL:
     NUM_CONV: 4
     POOLER_RESOLUTION: 14
 DATASETS:
-  TRAIN: ("publaynet_train",)
+  TRAIN: ("publaynet_val",)
   TEST: ("publaynet_val",)
 SOLVER:
   LR_SCHEDULER_NAME: "WarmupCosineLR"
@@ -51,7 +51,7 @@ SOLVER:
     CLIP_VALUE: 1.0
     NORM_TYPE: 2.0
   WARMUP_FACTOR: 0.01
-  BASE_LR: 0.000005
+  BASE_LR: 0.00005
   WEIGHT_DECAY: 0.0005
   IMS_PER_BATCH: 2
 INPUT:
