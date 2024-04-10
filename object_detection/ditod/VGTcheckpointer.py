@@ -186,7 +186,7 @@ class MyDetectionCheckpointer(DetectionCheckpointer):
             :func:`torch.nn.Module.load_state_dict`, but with extra support
             for ``incorrect_shapes``.
         """
-        DiT_checkpoint_state_dict = torch.load("./path/dit-base-224-p16-500k-62d53a.pth", map_location=torch.device("cpu"))
+        # DiT_checkpoint_state_dict = torch.load("./path/dit-base-224-p16-500k-62d53a.pth", map_location=torch.device("cpu"))
         checkpoint_state_dict = checkpoint.pop("model")
         # import ipdb;ipdb.set_trace()
         self._convert_ndarray_to_tensor(checkpoint_state_dict)
@@ -204,8 +204,8 @@ class MyDetectionCheckpointer(DetectionCheckpointer):
         for k in checkpoint_state_dict.keys():
             new_checkpoint_state_dict[append_prefix(k)] = checkpoint_state_dict[k]
 
-        for k in DiT_checkpoint_state_dict.keys():
-            new_checkpoint_state_dict[DiT_append_prefix(k)] = DiT_checkpoint_state_dict[k]
+        # for k in DiT_checkpoint_state_dict.keys():
+        #     new_checkpoint_state_dict[DiT_append_prefix(k)] = DiT_checkpoint_state_dict[k]
             
         checkpoint_state_dict = new_checkpoint_state_dict
         
