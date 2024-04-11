@@ -11,7 +11,7 @@ MODEL:
   PIXEL_STD: [ 127.5, 127.5, 127.5 ]
   BACKBONE:
     NAME: "build_VGT_fpn_backbone"
-  WEIGHTS: "./model_0019999_test.pth"
+  WEIGHTS: "./model_0019999.pth"
   VIT:
     NAME: "VGT_dit_base_patch16"
     MERGE_TYPE: "Sum"
