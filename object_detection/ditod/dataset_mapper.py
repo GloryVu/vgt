@@ -136,7 +136,7 @@ class DetrDatasetMapper:
         root = '/'.join(name[:-2])
         if name[-2] == 'val':
             name[-2] = 'dev'
-        pdf_name = '/'.join(['/VGT_publaynet_grid_pkl'] + name[-1:])
+        pdf_name = '/'.join(['/grid_pkl'] + name[-1:])
         with open((root + pdf_name + '.pdf.pkl'), "rb") as f:
             sample_inputs = pickle.load(f)
         input_ids = sample_inputs["input_ids"]
