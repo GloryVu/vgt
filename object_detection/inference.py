@@ -105,7 +105,6 @@ def main():
             md.set(thing_classes=["Caption","Footnote","Formula","List-item","Page-footer", "Page-header", "Picture", "Section-header", "Table", "Text", "Title"])
 
         output = predictor(img, grid_path)["instances"]
-        print(output)
         # import ipdb;ipdb.set_trace()
         v = Visualizer(img[:, :, ::-1],
                         md,
