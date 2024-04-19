@@ -60,15 +60,15 @@ def main(args):
     register_coco_instances(
         "publaynet_train",
         {},
-        "./publaynet/train.json",
-        "./publaynet/train"
+        "./dataset_v1/train.json",
+        "./dataset_v1/train"
     )
 
     register_coco_instances(
         "publaynet_val",
         {},
-        "./publaynet/val.json",
-        "./publaynet/val"
+        "./dataset_v1/val.json",
+        "./dataset_v1/val"
     )
 
     
