@@ -36,7 +36,7 @@ import weakref
 from detectron2.engine.train_loop import AMPTrainer, SimpleTrainer
 from ditod import VGTTrainer as MyTrainer
 import numpy as np
-
+import json
 def setup(args):
     """
     Create configs and perform basic setups.
@@ -79,7 +79,11 @@ def main(args):
         DetectionCheckpointer(model, save_dir=cfg.OUTPUT_DIR).resume_or_load(
             cfg.MODEL.WEIGHTS, resume=args.resume
         )
+
         res = MyTrainer.test(cfg, model)
+
+        with open(cfg.MODEL.WEIGHTS.split('/')[-1].replace('.pth','.json','w') as f:
+            json.dump(res,f,indent=4)
         return res
     print(cfg)
     trainer = MyTrainer(cfg)
