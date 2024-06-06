@@ -58,14 +58,14 @@ def main(args):
     
     # add publaynet data
     register_coco_instances(
-        "doclayent_train",
+        "doclaynet_train",
         {},
         "./dataset/DocLayNet/COCO/train.json",
         "./dataset/DocLayNet/PNG"
     )
 
     register_coco_instances(
-        "doclayent_val",
+        "doclaynet_val",
         {},
         "./dataset/DocLayNet/COCO/val.json",
         "./dataset/DocLayNet/PNG"
