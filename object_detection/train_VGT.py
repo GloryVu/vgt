@@ -82,7 +82,7 @@ def main(args):
 
         res = MyTrainer.test(cfg, model)
 
-        with open(cfg.MODEL.WEIGHTS.split('/')[-1].replace('.pth','.json','w') as f:
+        with open(cfg.MODEL.WEIGHTS.split('/')[-1].replace('.pth','.json'),'w') as f:
             json.dump(res,f,indent=4)
         return res
     print(cfg)
