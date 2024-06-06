@@ -31,7 +31,7 @@ SOLVER:
 TEST:
   EVAL_PERIOD: 4000
 DATASETS:
-  TRAIN: ("doclayent_train",)
-  TEST: ("doclayent_val",)
+  TRAIN: ("doclaynet_train",)
+  TEST: ("doclaynet_val",)
   
   
