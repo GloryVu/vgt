@@ -5,7 +5,7 @@ MODEL:
   WORDGRID:
     VOCAB_SIZE: 30552
     EMBEDDING_DIM: 64
-    MODEL_PATH: "/path/layoutlm-base-uncased/"
+    MODEL_PATH: "./path/xlm-roberta-uncased/"
     USE_PRETRAIN_WEIGHT: True
   PIXEL_MEAN: [ 127.5, 127.5, 127.5 ]
   PIXEL_STD: [ 127.5, 127.5, 127.5 ]
