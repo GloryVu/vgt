@@ -130,7 +130,7 @@ class DetrDatasetMapper:
         utils.check_image_size(dataset_dict, image)
         
         try:
-            name = dataset_dict["file_name"][0:-4].split('/') 
+            name = 'DocLayNet'
             if 'publaynet' in name:
                 root = '/'.join(name[:-2])
                 if name[-2] == 'val':
