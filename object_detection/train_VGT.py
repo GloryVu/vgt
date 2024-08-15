@@ -90,7 +90,7 @@ def main(args):
     trainer.resume_or_load(resume=args.resume)
     print(cfg)
     import time
-    time.sleep(30)
+    time.sleep(60)
     return trainer.train()
 
 
