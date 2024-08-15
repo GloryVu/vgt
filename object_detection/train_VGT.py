@@ -85,11 +85,12 @@ def main(args):
         with open('./eval/'+cfg.MODEL.WEIGHTS.split('/')[-1].replace('.pth','.json'),'w') as f:
             json.dump(res,f,indent=4)
         return res
+
+    trainer = MyTrainer(cfg)
+    trainer.resume_or_load(resume=args.resume)
     # print(cfg)
     # import time
     # time.sleep(30)
-    trainer = MyTrainer(cfg)
-    trainer.resume_or_load(resume=args.resume)
     return trainer.train()
 
 
