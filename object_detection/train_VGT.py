@@ -86,6 +86,8 @@ def main(args):
             json.dump(res,f,indent=4)
         return res
     print(cfg)
+    import time
+    time.sleep(30)
     trainer = MyTrainer(cfg)
     trainer.resume_or_load(resume=args.resume)
     return trainer.train()
