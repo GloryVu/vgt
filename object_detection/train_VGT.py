@@ -60,15 +60,15 @@ def main(args):
     register_coco_instances(
         "doclaynet_train",
         {},
-        "./DocLayNet_9k/COCO/train.json",
-        "./DocLayNet_9k/PNG"
+        "/kaggle/input/doclaynet-20241007/DocLayNet_20241007/coco_v1_20240924/train.json",
+        "/kaggle/input/doclaynet-20241007/DocLayNet_20241007"
     )
 
     register_coco_instances(
         "doclaynet_val",
         {},
-        "./DocLayNet_9k/COCO/val.json",
-        "./DocLayNet_9k/PNG"
+        "/kaggle/input/doclaynet-20241007/DocLayNet_20241007/coco_v1_20240924/val.json",
+        "/kaggle/input/doclaynet-20241007/DocLayNet_20241007"
     )
 
     
