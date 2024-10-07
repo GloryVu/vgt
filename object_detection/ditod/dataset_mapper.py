@@ -82,6 +82,65 @@ def build_transform_gen_w(cfg, is_train):
     return tfm_gens
 
 
+# def build_transform_gen(cfg, is_train):
+#     """
+#     Create a list of :class:`TransformGen` from config.
+#     Returns:
+#         list[TransformGen]
+#     """
+#     # if is_train:
+#     #     min_size = cfg.INPUT.MIN_SIZE_TRAIN
+#     #     max_size = cfg.INPUT.MAX_SIZE_TRAIN
+#     #     sample_style = cfg.INPUT.MIN_SIZE_TRAIN_SAMPLING
+#     # else:
+#     #     min_size = cfg.INPUT.MIN_SIZE_TEST
+#     #     max_size = cfg.INPUT.MAX_SIZE_TEST
+#     #     sample_style = "choice"
+#     # if sample_style == "range":
+#     #     assert len(min_size) == 2, "more than 2 ({}) min_size(s) are provided for ranges".format(len(min_size))
+
+#     # logger = logging.getLogger(__name__)
+#     tfm_gens = []
+#     # # if is_train:
+#     # #     tfm_gens.append(T.RandomFlip())
+    
+#     # if is_train:
+#     #     tfm_gens.append(T.ResizeShortestEdge(min_size, max_size, sample_style))
+#     #     logger.info("TransformGens used in training: " + str(tfm_gens))
+#     # else:
+#     tfm_gens.append(T.Resize((640, 640)))
+#     return tfm_gens
+
+
+# def build_transform_gen_w(cfg, is_train):
+#     """
+#     Create a list of :class:`TransformGen` from config.
+#     Returns:
+#         list[TransformGen]
+#     """
+#     # if is_train:
+#     #     min_size = cfg.INPUT.MIN_SIZE_TRAIN
+#     #     max_size = 800
+#     #     sample_style = cfg.INPUT.MIN_SIZE_TRAIN_SAMPLING
+#     # else:
+#     #     min_size = cfg.INPUT.MIN_SIZE_TEST
+#     #     max_size = cfg.INPUT.MAX_SIZE_TEST
+#     #     sample_style = "choice"
+#     # if sample_style == "range":
+#     #     assert len(min_size) == 2, "more than 2 ({}) min_size(s) are provided for ranges".format(len(min_size))
+
+#     # logger = logging.getLogger(__name__)
+#     tfm_gens = []
+#     # # if is_train:
+#     # #     tfm_gens.append(T.RandomFlip())
+#     # if is_train:
+#     #     tfm_gens.append(T.ResizeShortestEdge(min_size, max_size, sample_style))
+#     #     logger.info("TransformGens used in training: " + str(tfm_gens))
+#     # else:
+#     tfm_gens.append(T.Resize((640, 640)))
+#     return tfm_gens
+
+
 class DetrDatasetMapper:
     """
     A callable which takes a dataset dict in Detectron2 Dataset format,
@@ -96,13 +155,13 @@ class DetrDatasetMapper:
     """
 
     def __init__(self, cfg, is_train=True):
-        if cfg.INPUT.CROP.ENABLED and is_train:
-            self.crop_gen = [
-                T.ResizeShortestEdge([400, 500, 600], sample_style="choice"),
-                T.RandomCrop(cfg.INPUT.CROP.TYPE, cfg.INPUT.CROP.SIZE),
-            ]
-        else:
-            self.crop_gen = None
+        # if cfg.INPUT.CROP.ENABLED and is_train:
+        #     self.crop_gen = [
+        #         T.ResizeShortestEdge([400, 500, 600], sample_style="choice"),
+        #         T.Resize((800,800)),
+        #     ]
+        # else:
+        self.crop_gen = None
 
         self.mask_on = cfg.MODEL.MASK_ON
         self.tfm_gens = build_transform_gen(cfg, is_train)
@@ -196,7 +255,7 @@ class DetrDatasetMapper:
                 )
 
         image_shape = image.shape[:2]  # h, w
-        
+        # print(image_shape)
         # Pytorch's dataloader is efficient on torch.Tensor due to shared-memory,
         # but not efficient on large generic data structures due to the use of pickle & mp.Queue.
         # Therefore it's important to use torch.Tensor.

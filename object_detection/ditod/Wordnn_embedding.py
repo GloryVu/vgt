@@ -20,7 +20,7 @@ class WordnnEmbedding(nn.Module):
                  vocab_size=250005,
                  hidden_size=768,
                  embedding_dim=64,
-                 bros_embedding_path="./object_detection/path/xlm-roberta-uncased/",
+                 bros_embedding_path="/home/kienpm3/vinhvq11-workspace/document-layout-analysis/src/weights/",
                  use_pretrain_weight=True,
                  use_UNK_text=False):
         """

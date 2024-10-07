@@ -27,7 +27,7 @@ MODEL:
   ROI_HEADS:
     NAME: "StandardROIHeads"
     IN_FEATURES: ["p2", "p3", "p4", "p5"]
-    NUM_CLASSES: 5
+    NUM_CLASSES: 10
   ROI_BOX_HEAD:
     NAME: "FastRCNNConvFCHead"
     NUM_FC: 2
@@ -37,8 +37,8 @@ MODEL:
     NUM_CONV: 4
     POOLER_RESOLUTION: 14
 DATASETS:
-  TRAIN: ("publaynet_train",)
-  TEST: ("publaynet_val",)
+  TRAIN: ("doclayent_train",)
+  TEST: ("doclayent_val",)
 SOLVER:
   LR_SCHEDULER_NAME: "WarmupCosineLR"
   AMP:
@@ -51,16 +51,18 @@ SOLVER:
     CLIP_VALUE: 1.0
     NORM_TYPE: 2.0
   WARMUP_FACTOR: 0.01
-  BASE_LR: 0.00005
-  WEIGHT_DECAY: 0.0005
-  IMS_PER_BATCH: 2
+  BASE_LR: 0.0001
+  WEIGHT_DECAY: 0.01
+  IMS_PER_BATCH: 4
 INPUT:
   CROP:
-    ENABLED: False
+    ENABLED: True
     TYPE: "absolute_range"
     SIZE: (384, 600)
   RANDOM_FLIP: ""
   MIN_SIZE_TRAIN: (480, 512, 544, 576, 608, 640, 672, 704, 736, 768, 800)
+  MIN_SIZE_TEST: 384
+  MAX_SIZE_TEST: 600 
   FORMAT: "RGB"
 DATALOADER:
   NUM_WORKERS: 8

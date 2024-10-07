@@ -3,35 +3,38 @@ MODEL:
   MASK_ON: False
   META_ARCHITECTURE: "VGT"
   WORDGRID:
-    VOCAB_SIZE: 30552
+    VOCAB_SIZE: 250005
     EMBEDDING_DIM: 64
-    MODEL_PATH: "./path/xlm-roberta-uncased/"
+    MODEL_PATH: "/home/kienpm3/vinhvq11-workspace/document-layout-analysis/src/weights/"
     USE_PRETRAIN_WEIGHT: True
   PIXEL_MEAN: [ 127.5, 127.5, 127.5 ]
   PIXEL_STD: [ 127.5, 127.5, 127.5 ]
   BACKBONE:
     NAME: "build_VGT_fpn_backbone"
-  WEIGHTS: "/kaggle/input/checkpoint/model_final.pth"
+  WEIGHTS: "./pretrained_weight/doclaynet_VGT_model.pth"
   VIT:
     NAME: "VGT_dit_base_patch16"
     MERGE_TYPE: "Sum"
   ROI_HEADS:
     NAME: CascadeROIHeads
-    NUM_CLASSES: 8
+    NUM_CLASSES: 10
   ROI_BOX_HEAD:
     CLS_AGNOSTIC_BBOX_REG: True
   RPN:
     POST_NMS_TOPK_TRAIN: 2000
 SOLVER:
-  BASE_LR: 0.0002
-  WARMUP_ITERS: 1000
-  IMS_PER_BATCH: 2
-  MAX_ITER: 28000
-  STEPS: (20000, 24000)
+  BASE_LR: 0.0001
+  WARMUP_ITERS: 500
+  IMS_PER_BATCH: 4
+  MAX_ITER: 27000
+  STEPS: (23400, 25200)
+  CHECKPOINT_PERIOD: 1800
+  # CHECKPOINT_PERIOD: 200
 TEST:
-  EVAL_PERIOD: 4000
+  # EVAL_PERIOD: 200
+  EVAL_PERIOD: 1800
 DATASETS:
-  TRAIN: ("doclaynet_train",)
-  TEST: ("doclaynet_val",)
+  TRAIN: ("doclayent_train",)
+  TEST: ("doclayent_val",)
   
   
