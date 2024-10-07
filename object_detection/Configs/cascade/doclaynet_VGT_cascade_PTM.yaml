@@ -34,7 +34,7 @@ TEST:
   # EVAL_PERIOD: 200
   EVAL_PERIOD: 1800
 DATASETS:
-  TRAIN: ("doclayent_train",)
-  TEST: ("doclayent_val",)
+  TRAIN: ("doclaynet_train",)
+  TEST: ("doclaynet_val",)
   
   
