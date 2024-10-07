@@ -61,14 +61,14 @@ def main(args):
         "doclaynet_train",
         {},
         "/kaggle/input/doclaynet-20241007/DocLayNet_20241007/coco_v1_20240924/train.json",
-        "/kaggle/input/doclaynet-20241007/DocLayNet_20241007"
+        "/kaggle/input/doclaynet-20241007/DocLayNet_20241007/PNG"
     )
 
     register_coco_instances(
         "doclaynet_val",
         {},
         "/kaggle/input/doclaynet-20241007/DocLayNet_20241007/coco_v1_20240924/val.json",
-        "/kaggle/input/doclaynet-20241007/DocLayNet_20241007"
+        "/kaggle/input/doclaynet-20241007/DocLayNet_20241007/PNG"
     )
 
     
