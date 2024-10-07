@@ -5,7 +5,7 @@ MODEL:
   WORDGRID:
     VOCAB_SIZE: 250005
     EMBEDDING_DIM: 64
-    MODEL_PATH: "/kaggle/working/vgt/object_detection/path/"
+    MODEL_PATH: "/kaggle/working/vgt/object_detection/path/xlm-roberta-uncased/"
     USE_PRETRAIN_WEIGHT: True
   PIXEL_MEAN: [ 127.5, 127.5, 127.5 ]
   PIXEL_STD: [ 127.5, 127.5, 127.5 ]
