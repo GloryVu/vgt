@@ -87,7 +87,7 @@ def main(args):
         return res
 
     trainer = MyTrainer(cfg)
-    trainer.resume_or_load(resume=args.resume)
+    trainer.resume_or_load(resume=True)
     # print(cfg)
     # import time
     # time.sleep(60)
