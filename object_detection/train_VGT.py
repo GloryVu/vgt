@@ -60,15 +60,15 @@ def main(args):
     register_coco_instances(
         "doclaynet_train",
         {},
-        "/kaggle/input/doclaynet-20241007/DocLayNet_20241007/coco_v1_20240924/train.json",
-        "/kaggle/input/doclaynet-20241007/DocLayNet_20241007/PNG"
+        "/kaggle/input/fci-dla/DocLayNet/COCO/all_fci_data/train.json",
+        "/kaggle/input/fci-dla/DocLayNet/PNG"
     )
 
     register_coco_instances(
         "doclaynet_val",
         {},
-        "/kaggle/input/doclaynet-20241007/DocLayNet_20241007/coco_v1_20240924/val.json",
-        "/kaggle/input/doclaynet-20241007/DocLayNet_20241007/PNG"
+        "/kaggle/input/fci-dla/DocLayNet/COCO/all_fci_data/val.json",
+        "/kaggle/input/fci-dla/DocLayNet/PNG"
     )
 
     
@@ -87,7 +87,7 @@ def main(args):
         return res
 
     trainer = MyTrainer(cfg)
-    trainer.resume_or_load(resume=True)
+    trainer.resume_or_load(resume=False)
     # print(cfg)
     # import time
     # time.sleep(60)
