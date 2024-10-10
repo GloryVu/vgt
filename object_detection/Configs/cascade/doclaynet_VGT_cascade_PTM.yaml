@@ -11,7 +11,7 @@ MODEL:
   PIXEL_STD: [ 127.5, 127.5, 127.5 ]
   BACKBONE:
     NAME: "build_VGT_fpn_backbone"
-  WEIGHTS: "./pretrained_weight/doclaynet_VGT_model.pth"
+  WEIGHTS: "/kaggle/input/doclaynet_9k_20241007/pytorch/default/2/model_final.pth"
   VIT:
     NAME: "VGT_dit_base_patch16"
     MERGE_TYPE: "Sum"
